@@ -1,0 +1,20 @@
+Package: BVshear
+Title: Brutsaert-Veron shear driven distribution
+Version: 1.0.0
+Authors@R: c(
+    person("Bruno", "Solheid", , "first.last@example.com", role = "aut",
+           comment = c(ORCID = "0000-0002-6279-5596")),
+    person("Nelson Luís", "Dias", , "first.last@example.com", role = "aut",
+           comment = c(ORCID = "0000-0002-9770-8595")),
+    person("Eliardo", "Costa", , "eliardo.costa@ufrn.br", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0003-4528-0379"))
+  )
+Description: An implementation of the density function, distribution
+    function, quantile function and random generator for the
+    Brutsaert-Veron shear driven distribution.
+License: GPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.2
+Imports: 
+    PearsonDS
