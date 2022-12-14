@@ -4,7 +4,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of BVshear is to ...
+The goal of BVshear is to provide density, probability, quantile and random generation functions for the Brutsaert-Veron shear driven distribution.
 
 ## Installation
 
