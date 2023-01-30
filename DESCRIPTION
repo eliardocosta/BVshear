@@ -2,7 +2,7 @@ Package: BVshear
 Title: Brutsaert-Veron shear driven distribution
 Version: 1.0.0
 Authors@R: c(
-    person("Bruno", "Solheid", , "first.last@example.com", role = "aut",
+    person("Bruno", "Solheid", , "bruno.solheid@ufrn.br", role = "aut",
            comment = c(ORCID = "0000-0002-6279-5596")),
     person("Nelson Luís", "Dias", , "first.last@example.com", role = "aut",
            comment = c(ORCID = "0000-0002-9770-8595")),

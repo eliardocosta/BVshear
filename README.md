@@ -16,7 +16,7 @@ library(remotes)
 install_github("eliardocosta/BVshear")
 ```
 
-## Example
+## Examples
 
 These are basic examples showings how to use the functions of the package for the Brutsaert-Veron shear driven distribution:
 

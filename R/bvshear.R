@@ -45,9 +45,9 @@
 #'      ylim = c(0, 40), xlab = "Contact time", main = "Histogram of contact times")
 #' @aliases dBVshear
 dBVshear <- function(x, u, ...) {
-  s <- 0.014199*u^(-1/2)
   Re <- 0.452985*u^3
-  alpha <- (265.3469*Re^(-1/3))/(265.3469*Re^(-1/3) - 1)
+  s <- 0.003480316*Re^(-1/4)
+  alpha <- (197.899543379*Re^(-1/12))/(197.899543379*Re^(-1/12) - 1)
   out <- PearsonDS::dpearsonVI(x, a = alpha, b = alpha, location = 0, scale = s, ...)
   return(out)
 }
@@ -55,9 +55,9 @@ dBVshear <- function(x, u, ...) {
 #' @export
 #' @aliases pBVshear
 pBVshear <- function(q, u, ...) {
-  s <- 0.014199*u^(-1/2)
   Re <- 0.452985*u^3
-  alpha <- (265.3469*Re^(-1/3))/(265.3469*Re^(-1/3) - 1)
+  s <- 0.003480316*Re^(-1/4)
+  alpha <- (197.899543379*Re^(-1/12))/(197.899543379*Re^(-1/12) - 1)
   out <- PearsonDS::ppearsonVI(q, a = alpha, b = alpha, location = 0, scale = s, ...)
   return(out)
 }
@@ -65,9 +65,9 @@ pBVshear <- function(q, u, ...) {
 #' @export
 #' @aliases qBVshear
 qBVshear <- function(p, u, ...) {
-  s <- 0.014199*u^(-1/2)
   Re <- 0.452985*u^3
-  alpha <- (265.3469*Re^(-1/3))/(265.3469*Re^(-1/3) - 1)
+  s <- 0.003480316*Re^(-1/4)
+  alpha <- (197.899543379*Re^(-1/12))/(197.899543379*Re^(-1/12) - 1)
   out <- PearsonDS::qpearsonVI(p, a = alpha, b = alpha, location = 0, scale = s, ...)
   return(out)
 }
@@ -75,9 +75,9 @@ qBVshear <- function(p, u, ...) {
 #' @export
 #' @aliases rBVshear
 rBVshear <- function(n, u, ...) {
-  s <- 0.014199*u^(-1/2)
   Re <- 0.452985*u^3
-  alpha <- (265.3469*Re^(-1/3))/(265.3469*Re^(-1/3) - 1)
+  s <- 0.003480316*Re^(-1/4)
+  alpha <- (197.899543379*Re^(-1/12))/(197.899543379*Re^(-1/12) - 1)
   out <- PearsonDS::rpearsonVI(n, a = alpha, b = alpha, location = 0, scale = s, ...)
   return(out)
 }
