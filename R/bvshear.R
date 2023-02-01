@@ -45,6 +45,7 @@
 #'      ylim = c(0, 40), xlab = "Contact time", main = "Histogram of contact times")
 #' @aliases dBVshear
 dBVshear <- function(x, u, ...) {
+  u <- 0.0346930*u
   Re <- 0.452985*u^3
   s <- 0.003480316*Re^(-1/4)
   alpha <- (197.899543379*Re^(-1/12))/(197.899543379*Re^(-1/12) - 1)
@@ -55,6 +56,7 @@ dBVshear <- function(x, u, ...) {
 #' @export
 #' @aliases pBVshear
 pBVshear <- function(q, u, ...) {
+  u <- 0.0346930*u
   Re <- 0.452985*u^3
   s <- 0.003480316*Re^(-1/4)
   alpha <- (197.899543379*Re^(-1/12))/(197.899543379*Re^(-1/12) - 1)
@@ -65,6 +67,7 @@ pBVshear <- function(q, u, ...) {
 #' @export
 #' @aliases qBVshear
 qBVshear <- function(p, u, ...) {
+  u <- 0.0346930*u
   Re <- 0.452985*u^3
   s <- 0.003480316*Re^(-1/4)
   alpha <- (197.899543379*Re^(-1/12))/(197.899543379*Re^(-1/12) - 1)
@@ -75,6 +78,7 @@ qBVshear <- function(p, u, ...) {
 #' @export
 #' @aliases rBVshear
 rBVshear <- function(n, u, ...) {
+  u <- 0.0346930*u
   Re <- 0.452985*u^3
   s <- 0.003480316*Re^(-1/4)
   alpha <- (197.899543379*Re^(-1/12))/(197.899543379*Re^(-1/12) - 1)
