@@ -44,44 +44,64 @@
 #' hist(tau, freq = FALSE, breaks = seq(0, max(tau) + eps, eps), xlim = c(0, 0.2), 
 #'      ylim = c(0, 40), xlab = "Contact time", main = "Histogram of contact times")
 #' @aliases dBVshear
-dBVshear <- function(x, u, ...) {
-  u <- 0.0346930*u
-  Re <- 0.452985*u^3
-  s <- 0.003480316*Re^(-1/4)
-  alpha <- (197.899543379*Re^(-1/12))/(197.899543379*Re^(-1/12) - 1)
+dBVshear <- function(x, u, method = 1, ...) {
+  if (method == 1) {
+    u <- 0.0346930*u
+    Re <- 0.452985*u^3
+    s <- 0.003480316*Re^(-1/4)
+    alpha <- (3.957382*Re^(-1/12))/(3.957382*Re^(-1/12) - 1)
+  }
+  if (method == 2) {
+    #
+  }
   out <- PearsonDS::dpearsonVI(x, a = alpha, b = alpha, location = 0, scale = s, ...)
   return(out)
 }
 #' @rdname bvshear
 #' @export
 #' @aliases pBVshear
-pBVshear <- function(q, u, ...) {
-  u <- 0.0346930*u
-  Re <- 0.452985*u^3
-  s <- 0.003480316*Re^(-1/4)
-  alpha <- (197.899543379*Re^(-1/12))/(197.899543379*Re^(-1/12) - 1)
+pBVshear <- function(q, u, method = 1, ...) {
+  if (method == 1) {
+    u <- 0.0346930*u
+    Re <- 0.452985*u^3
+    s <- 0.003480316*Re^(-1/4)
+    alpha <- (3.957382*Re^(-1/12))/(3.957382*Re^(-1/12) - 1)
+  }
+  if (method == 2) {
+    #
+  }
   out <- PearsonDS::ppearsonVI(q, a = alpha, b = alpha, location = 0, scale = s, ...)
   return(out)
 }
 #' @rdname bvshear
 #' @export
 #' @aliases qBVshear
-qBVshear <- function(p, u, ...) {
-  u <- 0.0346930*u
-  Re <- 0.452985*u^3
-  s <- 0.003480316*Re^(-1/4)
-  alpha <- (197.899543379*Re^(-1/12))/(197.899543379*Re^(-1/12) - 1)
+qBVshear <- function(p, u, method = 1, ...) {
+  if (method == 1) {
+    u <- 0.0346930*u
+    Re <- 0.452985*u^3
+    s <- 0.003480316*Re^(-1/4)
+    alpha <- (3.957382*Re^(-1/12))/(3.957382*Re^(-1/12) - 1)
+  }
+  if (method == 2) {
+    #
+  }
   out <- PearsonDS::qpearsonVI(p, a = alpha, b = alpha, location = 0, scale = s, ...)
   return(out)
 }
 #' @rdname bvshear
 #' @export
 #' @aliases rBVshear
-rBVshear <- function(n, u, ...) {
-  u <- 0.0346930*u
-  Re <- 0.452985*u^3
-  s <- 0.003480316*Re^(-1/4)
-  alpha <- (197.899543379*Re^(-1/12))/(197.899543379*Re^(-1/12) - 1)
+rBVshear <- function(n, u, method = 1, ...) {
+  if (method == 1) {
+    u <- 0.0346930*u
+    Re <- 0.452985*u^3
+    s <- 0.003480316*Re^(-1/4)
+    alpha <- (3.957382*Re^(-1/12))/(3.957382*Re^(-1/12) - 1)
+  }
+  if (method == 2) {
+    #
+  }
   out <- PearsonDS::rpearsonVI(n, a = alpha, b = alpha, location = 0, scale = s, ...)
   return(out)
 }

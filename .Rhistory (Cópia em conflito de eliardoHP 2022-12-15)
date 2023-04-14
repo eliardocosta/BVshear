@@ -1,0 +1,235 @@
+library(usethis)
+library(devtools)
+# adicionando licenca MIT
+use_mit_license(copyright_holder = "Bruno Solheid, Nelson Luís Dias and Eliardo Costa")
+# adicionando detalhes dos autores
+use_description(fields = list(
+`Authors@R` = "c(
+person(\"Bruno\", \"Solheid\", email = \"first.last@example.com\",
+role = c(\"aut\", \"cre\"), comment = c(ORCID = \"YOUR-ORCID-ID\")),
+person(\"Nelson Luís\", \"Dias\", email = \"first.last@example.com\",
+role = c(\"aut\", \"cre\"), comment = c(ORCID = \"YOUR-ORCID-ID\")),
+person(\"Eliardo\", \"Costa\", email = \"first.last@example.com\",
+role = c(\"aut\", \"cre\"), comment = c(ORCID = \"YOUR-ORCID-ID\"))
+)"
+))
+# adicionando licenca MIT
+use_mit_license(copyright_holder = "Bruno Solheid, Nelson Luís Dias and Eliardo Costa")
+# Especificando pacotes para importar
+use_package("PearsonDS", type = "Imports", min_version = NULL)
+library(usethis)
+library(devtools)
+# Especificando pacotes para importar
+use_package("PearsonDS", type = "Imports", min_version = NULL)
+# Criando documentacao
+devtools::document(direc)
+# diretorio do pacote
+direc <- "/home/eliardocosta/Dropbox/eliardo/Documentos/Trabalho/Pesquisa/Projetos/Em andamento/Solheid et al (2022+)/Codigos R/Pacote R/BVshear/"
+# Criando documentacao
+devtools::document(direc)
+?dnorm
+?lm
+# Creating README
+use_readme_md()
+# Carregando pacote localmente
+devtools::load_all(direc)
+plot(function(x) dBVshear(x, u = 0.5), 0, 0.5, add = TRUE, col = 3)
+plot(function(x) dBVshear(x, u = 0.5), 0, 0.5, add = TRUE)
+plot(function(x) dBVshear(x, u = 0.5), 0, 0.5, ylab = expression(paste(Pi,"(x)"))
+)
+set.seed(1234)
+tau <- rBVshear(n = 1E4, u = 0.5)
+eps <- 0.005
+hist(tau, freq = FALSE, breaks = seq(0, max(tau) + eps, eps), xlim = c(0, 0.2),
+ylim = c(0, 40), xlab = "Contact time", main = "Histogram of contact times")
+plot(function(x) dBVshear(x, u = 0.5), 0, 0.2, ylab = expression(paste(Pi,"(x)")))
+set.seed(1234)
+tau <- rBVshear(n = 1E4, u = 0.5)
+eps <- 0.005
+hist(tau, freq = FALSE, breaks = seq(0, max(tau) + eps, eps), xlim = c(0, 0.2),
+ylim = c(0, 40), xlab = "Contact time", main = "Histogram of contact times")
+# adicionando detalhes dos autores
+use_description(fields = list(
+`Authors@R` = "c(
+person(\"Bruno\", \"Solheid\", email = \"first.last@example.com\",
+role = c(\"aut\"), comment = c(ORCID = \"YOUR-ORCID-ID\")),
+person(\"Nelson Luís\", \"Dias\", email = \"first.last@example.com\",
+role = c(\"aut\"), comment = c(ORCID = \"YOUR-ORCID-ID\")),
+person(\"Eliardo\", \"Costa\", email = \"first.last@example.com\",
+role = c(\"aut\", \"cre\"), comment = c(ORCID = \"YOUR-ORCID-ID\"))
+)"
+))
+# adicionando detalhes dos autores
+use_description(fields = list(
+`Authors@R` = "c(
+person(\"Bruno\", \"Solheid\", email = \"first.last@example.com\",
+role = c(\"aut\"), comment = c(ORCID = \"0000-0002-6279-5596\")),
+person(\"Nelson Luís\", \"Dias\", email = \"first.last@example.com\",
+role = c(\"aut\"), comment = c(ORCID = \"0000-0002-9770-8595\")),
+person(\"Eliardo\", \"Costa\", email = \"first.last@example.com\",
+role = c(\"aut\", \"cre\"), comment = c(ORCID = \"0000-0003-4528-0379\"))
+)"
+))
+use_description_defaults() # vendo argumentos de fields
+# adicionando licenca MIT
+use_mit_license(copyright_holder = "Bruno Solheid, Nelson Luís Dias and Eliardo Costa")
+# Especificando pacotes para importar
+use_package("PearsonDS", type = "Imports", min_version = NULL)
+# adicionando detalhes dos autores
+use_description(fields = list(
+Title = "Brutsaert-Veron shear driven distribution",
+Description = "An implementation of the density function, distribution function, quantile
+function and random generator for the Brutsaert-Veron shear driven distribution.",
+`Authors@R` = "c(
+person(\"Bruno\", \"Solheid\", email = \"first.last@example.com\",
+role = c(\"aut\"), comment = c(ORCID = \"0000-0002-6279-5596\")),
+person(\"Nelson Luís\", \"Dias\", email = \"first.last@example.com\",
+role = c(\"aut\"), comment = c(ORCID = \"0000-0002-9770-8595\")),
+person(\"Eliardo\", \"Costa\", email = \"first.last@example.com\",
+role = c(\"aut\", \"cre\"), comment = c(ORCID = \"0000-0003-4528-0379\"))
+)"
+))
+# adicionando detalhes dos autores
+use_description(fields = list(
+Title = "Brutsaert-Veron shear driven distribution",
+Description = "An implementation of the density function, distribution function, quantile
+function and random generator for the Brutsaert-Veron shear driven distribution.",
+`Authors@R` = "c(
+person(\"Bruno\", \"Solheid\", email = \"first.last@example.com\",
+role = c(\"aut\"), comment = c(ORCID = \"0000-0002-6279-5596\")),
+person(\"Nelson Luís\", \"Dias\", email = \"first.last@example.com\",
+role = c(\"aut\"), comment = c(ORCID = \"0000-0002-9770-8595\")),
+person(\"Eliardo\", \"Costa\", email = \"eliardo.costa@ufrn.br\",
+role = c(\"aut\", \"cre\"), comment = c(ORCID = \"0000-0003-4528-0379\"))
+)"
+))
+# adicionando licenca MIT
+use_mit_license(copyright_holder = "Bruno Solheid, Nelson Luís Dias and Eliardo Costa")
+# Especificando pacotes para importar
+use_package("PearsonDS", type = "Imports", min_version = NULL)
+# Checkando pacote
+devtools::check(pkg = direc)
+plot(function(x) dBVshear(x, u = 0.5), 0, 0.2, ylab = expression(paste(Pi,"(x)")))
+curve(sin, -2*pi, 2*pi, xname = "t")
+curve(dBVshear(u = 0.5), 0, 0.2, ylab = expression(paste(Pi,"(x)")))
+curve(dBVshear(x, u = 0.5), 0, 0.2, ylab = expression(paste(Pi,"(x)")))
+# Checkando pacote
+devtools::check(pkg = direc)
+ff <- function(x) dBVshear(x, u = 0.5)
+plot(ff, 0, 0.2, ylab = expression(paste(Pi,"(x)")))
+# Checkando pacote
+devtools::check(pkg = direc)
+dBVshear(x = 0.003, u = 0.5)
+dBVshear(x = 0.03, u = 0.5)
+pBVshear(x = 0.03, u = 0.5)
+pBVshear(q = 0.03, u = 0.5)
+?dnorm
+?dchisq
+?dgamma
+?dbeta
+# density at 0.03 for u = 0.5
+dBVshear(x = 0.03, u = 0.5)
+dBVshear(x = 0.03, u = 0.5, log = TRUE)
+log(8.013046)
+# P(X <= 0.03) for u = 0.5
+pBVshear(q = 0.03, u = 0.5)
+# P(X > 0.03) for u = 0.5
+pBVshear(q = 0.03, u = 0.5, lower.tail = TRUE)
+# P(X > 0.03) for u = 0.5
+pBVshear(q = 0.03, u = 0.5, lower.tail = FALSE)
+#
+qBVshear(p = 0.5, u = 0.5)
+# Checkando pacote
+devtools::check(pkg = direc)
+# Checkando pacote
+devtools::check(pkg = direc)
+#
+use_namespace(roxygen = TRUE)
+# Checkando pacote
+devtools::check(pkg = direc)
+# Checkando pacote
+devtools::check(pkg = direc)
+# Checkando pacote
+devtools::check(pkg = direc)
+# Checkando pacote
+devtools::check(pkg = direc)
+# Checkando pacote
+devtools::check(pkg = direc)
+# Checkando pacote
+devtools::check(pkg = direc)
+# Checkando pacote e criando .Rd
+devtools::check(pkg = direc)
+# Checkando pacote e criando .Rd
+devtools::check(pkg = direc)
+# Checkando pacote e criando .Rd
+devtools::check(pkg = direc)
+# Checkando pacote e criando .Rd
+devtools::check(pkg = direc)
+# diretorio do pacote
+direc <- "/home/eliardocosta/Dropbox/eliardo/Documentos/Trabalho/Pesquisa/Projetos/Em andamento/Solheid et al (2022+)/Codigos R/Pacote R/BVshear/"
+library(devtools)
+# Carregando pacote localmente
+devtools::load_all(direc)
+# density at 0.03 for u = 0.5
+dBVshear(x = 0.03, u = 0.5)
+# log-density at 0.03 for u = 0.5
+dBVshear(x = 0.03, u = 0.5, log = TRUE)
+# P(X <= 0.03) for u = 0.5
+pBVshear(q = 0.03, u = 0.5)
+# P(X > 0.03) for u = 0.5
+pBVshear(q = 0.03, u = 0.5, lower.tail = FALSE)
+# median of the distribution for u = 0.5
+qBVshear(p = 0.5, u = 0.5)
+set.seed(1234)
+tau <- rBVshear(n = 1E4, u = 0.5)
+eps <- 0.005
+hist(tau, freq = FALSE, breaks = seq(0, max(tau) + eps, eps), xlim = c(0, 0.2),
+ylim = c(0, 40), xlab = "Contact time", main = "Histogram of contact times")
+# diretorio do pacote
+direc <- "/home/eliardocosta/Dropbox/eliardo/Documentos/Trabalho/Pesquisa/Projetos/Em andamento/Solheid et al (2022+)/Codigos R/Pacote R/BVshear/"
+library(devtools)
+# Carregando pacote localmente
+devtools::load_all(direc)
+# density at 0.03 for u = 0.5
+dBVshear(x = 0.03, u = 0.5)
+# log-density at 0.03 for u = 0.5
+dBVshear(x = 0.03, u = 0.5, log = TRUE)
+# P(X <= 0.03) for u = 0.5
+pBVshear(q = 0.03, u = 0.5)
+# P(X > 0.03) for u = 0.5
+pBVshear(q = 0.03, u = 0.5, lower.tail = FALSE)
+# median of the distribution for u = 0.5
+qBVshear(p = 0.5, u = 0.5)
+set.seed(1234)
+tau <- rBVshear(n = 1E4, u = 0.5)
+eps <- 0.005
+hist(tau, freq = FALSE, breaks = seq(0, max(tau) + eps, eps), xlim = c(0, 0.2),
+ylim = c(0, 40), xlab = "Contact time", main = "Histogram of contact times")
+tau
+n1 <- 111
+sy1 <- 217
+n2 <- 44
+sy2 <- 66
+a1 <- a2 <- 2
+b1 <- b2 <- 1
+N <- 1E4
+# item a
+theta.post <- rgamma(N, shape = a1 + sy1, rate = b1 + n1)
+gamma.post <- rgamma(N, shape = a2 + sy2, rate = b2 + n2)
+mean(ifelse(theta.post > gamma.post, 1, 0))
+# item a
+theta.post <- rgamma(N, shape = a1 + sy1, rate = b1 + n1)
+gamma.post <- rgamma(N, shape = a2 + sy2, rate = b2 + n2)
+mean(ifelse(theta.post > gamma.post, 1, 0))
+# item a
+theta.post <- rgamma(N, shape = a1 + sy1, rate = b1 + n1)
+gamma.post <- rgamma(N, shape = a2 + sy2, rate = b2 + n2)
+mean(ifelse(theta.post > gamma.post, 1, 0)) # ~0.97
+a1 + sy1
+b1 + n1
+a2 + sy2
+b2 + n2
+# item c
+rho <- theta.post/gamma.post
+mean(rho) # est. valor esperado
+quantile(rho, probs = c(0.05/2, 1 - 0.05/2)) # est. intervalar
