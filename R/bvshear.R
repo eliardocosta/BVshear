@@ -10,6 +10,11 @@
 #' @param p vector of probabilities.
 #' @param n number of observations for random generation.
 #' @param u friction velocity.
+#' @param beta xxx.
+#' @param t xxx.
+#' @param sc xxx.
+#' @param v xxx.
+#' @param method xxx.
 #' @param ... additional arguments to be passed to the Pearson Type VI distribution of the PearsonDS package.
 #'
 #' @return \code{dBVshear} gives the density, \code{pBVshear} gives the distribution function, \code{qBVshear} gives the quantile function, and \code{rBVshear} provides the random generation.
@@ -44,15 +49,21 @@
 #' hist(tau, freq = FALSE, breaks = seq(0, max(tau) + eps, eps), xlim = c(0, 0.2), 
 #'      ylim = c(0, 40), xlab = "Contact time", main = "Histogram of contact times")
 #' @aliases dBVshear
-dBVshear <- function(x, u, method = 1, ...) {
+dBVshear <- function(x, u, beta, t, sc, v, method = 1, ...) {
+  u <- 0.0346930*u
+  Re <- 0.452985*u^3
+  z0 <- 0.11*u^2/9.8
+  D <- v/sc
+  tk <- (v*z0/u^3)^(1/2)
   if (method == 1) {
-    u <- 0.0346930*u
-    Re <- 0.452985*u^3
-    s <- 0.003480316*Re^(-1/4)
+    s <- 32.85*Re^(-1/4)*tk
     alpha <- (3.957382*Re^(-1/12))/(3.957382*Re^(-1/12) - 1)
   }
   if (method == 2) {
-    #
+    omega <- exp(1/(2*beta*t))*2*pnorm(-sqrt(1/(beta*t)))
+    psi <- omega*sqrt(pi*sc)*Re^(1/4)*sqrt(D/(t*u^2))
+    s <- 6.469*psi^(-1)*tk
+    alpha <- (12*psi*Re^(-1/3))/(12*psi*Re^(-1/3) - 1)
   }
   out <- PearsonDS::dpearsonVI(x, a = alpha, b = alpha, location = 0, scale = s, ...)
   return(out)
@@ -60,15 +71,21 @@ dBVshear <- function(x, u, method = 1, ...) {
 #' @rdname bvshear
 #' @export
 #' @aliases pBVshear
-pBVshear <- function(q, u, method = 1, ...) {
+pBVshear <- function(q, u, beta, t, sc, v, method = 1, ...) {
+  u <- 0.0346930*u
+  Re <- 0.452985*u^3
+  z0 <- 0.11*u^2/9.8
+  D <- v/sc
+  tk <- (v*z0/u^3)^(1/2)
   if (method == 1) {
-    u <- 0.0346930*u
-    Re <- 0.452985*u^3
-    s <- 0.003480316*Re^(-1/4)
+    s <- 32.85*Re^(-1/4)*tk
     alpha <- (3.957382*Re^(-1/12))/(3.957382*Re^(-1/12) - 1)
   }
   if (method == 2) {
-    #
+    omega <- exp(1/(2*beta*t))*2*pnorm(-sqrt(1/(beta*t)))
+    psi <- omega*sqrt(pi*sc)*Re^(1/4)*sqrt(D/(t*u^2))
+    s <- 6.469*psi^(-1)*tk
+    alpha <- (12*psi*Re^(-1/3))/(12*psi*Re^(-1/3) - 1)
   }
   out <- PearsonDS::ppearsonVI(q, a = alpha, b = alpha, location = 0, scale = s, ...)
   return(out)
@@ -76,15 +93,21 @@ pBVshear <- function(q, u, method = 1, ...) {
 #' @rdname bvshear
 #' @export
 #' @aliases qBVshear
-qBVshear <- function(p, u, method = 1, ...) {
+qBVshear <- function(p, u, beta, t, sc, v, method = 1, ...) {
+  u <- 0.0346930*u
+  Re <- 0.452985*u^3
+  z0 <- 0.11*u^2/9.8
+  D <- v/sc
+  tk <- (v*z0/u^3)^(1/2)
   if (method == 1) {
-    u <- 0.0346930*u
-    Re <- 0.452985*u^3
-    s <- 0.003480316*Re^(-1/4)
+    s <- 32.85*Re^(-1/4)*tk
     alpha <- (3.957382*Re^(-1/12))/(3.957382*Re^(-1/12) - 1)
   }
   if (method == 2) {
-    #
+    omega <- exp(1/(2*beta*t))*2*pnorm(-sqrt(1/(beta*t)))
+    psi <- omega*sqrt(pi*sc)*Re^(1/4)*sqrt(D/(t*u^2))
+    s <- 6.469*psi^(-1)*tk
+    alpha <- (12*psi*Re^(-1/3))/(12*psi*Re^(-1/3) - 1)
   }
   out <- PearsonDS::qpearsonVI(p, a = alpha, b = alpha, location = 0, scale = s, ...)
   return(out)
@@ -92,15 +115,21 @@ qBVshear <- function(p, u, method = 1, ...) {
 #' @rdname bvshear
 #' @export
 #' @aliases rBVshear
-rBVshear <- function(n, u, method = 1, ...) {
+rBVshear <- function(n, u, beta, t, sc, v, method = 1, ...) {
+  u <- 0.0346930*u
+  Re <- 0.452985*u^3
+  z0 <- 0.11*u^2/9.8
+  D <- v/sc
+  tk <- (v*z0/u^3)^(1/2)
   if (method == 1) {
-    u <- 0.0346930*u
-    Re <- 0.452985*u^3
-    s <- 0.003480316*Re^(-1/4)
+    s <- 32.85*Re^(-1/4)*tk
     alpha <- (3.957382*Re^(-1/12))/(3.957382*Re^(-1/12) - 1)
   }
   if (method == 2) {
-    #
+    omega <- exp(1/(2*beta*t))*2*pnorm(-sqrt(1/(beta*t)))
+    psi <- omega*sqrt(pi*sc)*Re^(1/4)*sqrt(D/(t*u^2))
+    s <- 6.469*psi^(-1)*tk
+    alpha <- (12*psi*Re^(-1/3))/(12*psi*Re^(-1/3) - 1)
   }
   out <- PearsonDS::rpearsonVI(n, a = alpha, b = alpha, location = 0, scale = s, ...)
   return(out)
