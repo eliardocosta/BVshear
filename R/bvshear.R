@@ -49,12 +49,13 @@
 #' hist(tau, freq = FALSE, breaks = seq(0, max(tau) + eps, eps), xlim = c(0, 0.2), 
 #'      ylim = c(0, 40), xlab = "Contact time", main = "Histogram of contact times")
 #' @aliases dBVshear
-dBVshear <- function(x, u, beta, t, sc, v, method = 1, ...) {
+dBVshear <- function(x, u, v, beta = NULL, t = NULL, sc = NULL, 
+                     method = 1, ...) {
   u <- 0.0346930*u
   Re <- 0.452985*u^3
   z0 <- 0.11*u^2/9.8
-  D <- v/sc
   tk <- (v*z0/u^3)^(1/2)
+  D <- v/sc
   if (method == 1) {
     s <- 32.85*Re^(-1/4)*tk
     alpha <- (3.957382*Re^(-1/12))/(3.957382*Re^(-1/12) - 1)
@@ -71,12 +72,13 @@ dBVshear <- function(x, u, beta, t, sc, v, method = 1, ...) {
 #' @rdname bvshear
 #' @export
 #' @aliases pBVshear
-pBVshear <- function(q, u, beta, t, sc, v, method = 1, ...) {
+pBVshear <- function(q, u, v, beta = NULL, t = NULL, sc = NULL, 
+                     method = 1, ...) {
   u <- 0.0346930*u
   Re <- 0.452985*u^3
   z0 <- 0.11*u^2/9.8
-  D <- v/sc
   tk <- (v*z0/u^3)^(1/2)
+  D <- v/sc
   if (method == 1) {
     s <- 32.85*Re^(-1/4)*tk
     alpha <- (3.957382*Re^(-1/12))/(3.957382*Re^(-1/12) - 1)
@@ -93,12 +95,13 @@ pBVshear <- function(q, u, beta, t, sc, v, method = 1, ...) {
 #' @rdname bvshear
 #' @export
 #' @aliases qBVshear
-qBVshear <- function(p, u, beta, t, sc, v, method = 1, ...) {
+qBVshear <- function(p, u, v, beta = NULL, t = NULL, sc = NULL, 
+                     method = 1, ...) {
   u <- 0.0346930*u
   Re <- 0.452985*u^3
   z0 <- 0.11*u^2/9.8
-  D <- v/sc
   tk <- (v*z0/u^3)^(1/2)
+  D <- v/sc
   if (method == 1) {
     s <- 32.85*Re^(-1/4)*tk
     alpha <- (3.957382*Re^(-1/12))/(3.957382*Re^(-1/12) - 1)
@@ -115,12 +118,13 @@ qBVshear <- function(p, u, beta, t, sc, v, method = 1, ...) {
 #' @rdname bvshear
 #' @export
 #' @aliases rBVshear
-rBVshear <- function(n, u, beta, t, sc, v, method = 1, ...) {
+rBVshear <- function(n, u, v, beta = NULL, t = NULL, sc = NULL, 
+                     method = 1, ...) {
   u <- 0.0346930*u
   Re <- 0.452985*u^3
   z0 <- 0.11*u^2/9.8
-  D <- v/sc
   tk <- (v*z0/u^3)^(1/2)
+  D <- v/sc
   if (method == 1) {
     s <- 32.85*Re^(-1/4)*tk
     alpha <- (3.957382*Re^(-1/12))/(3.957382*Re^(-1/12) - 1)
