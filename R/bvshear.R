@@ -67,7 +67,7 @@ dBVshear <- function(x, u, v, beta = NULL, t = NULL, sc = NULL,
     alpha <- (12.056*psi*Re^(-1/3))/(12.056*psi*Re^(-1/3) - 1)
   }
   out <- PearsonDS::dpearsonVI(x, a = alpha, b = alpha, location = 0, scale = ts, ...)
-  return(list(den = out, alpha = alpha, ts = ts))
+  return(list(den = out, alpha = alpha, ts = ts, Re = Re))
 }
 #' @rdname bvshear
 #' @export
@@ -90,7 +90,7 @@ pBVshear <- function(q, u, v, beta = NULL, t = NULL, sc = NULL,
     alpha <- (12.056*psi*Re^(-1/3))/(12.056*psi*Re^(-1/3) - 1)
   }
   out <- PearsonDS::ppearsonVI(q, a = alpha, b = alpha, location = 0, scale = ts, ...)
-  return(list(den = out, alpha = alpha, ts = ts))
+  return(list(den = out, alpha = alpha, ts = ts, Re = Re))
 }
 #' @rdname bvshear
 #' @export
@@ -113,7 +113,7 @@ qBVshear <- function(p, u, v, beta = NULL, t = NULL, sc = NULL,
     alpha <- (12.056*psi*Re^(-1/3))/(12.056*psi*Re^(-1/3) - 1)
   }
   out <- PearsonDS::qpearsonVI(p, a = alpha, b = alpha, location = 0, scale = ts, ...)
-  return(list(den = out, alpha = alpha, ts = ts))
+  return(list(den = out, alpha = alpha, ts = ts, Re = Re))
 }
 #' @rdname bvshear
 #' @export
@@ -136,5 +136,5 @@ rBVshear <- function(n, u, v, beta = NULL, t = NULL, sc = NULL,
     alpha <- (12.056*psi*Re^(-1/3))/(12.056*psi*Re^(-1/3) - 1)
   }
   out <- PearsonDS::rpearsonVI(n, a = alpha, b = alpha, location = 0, scale = ts, ...)
-  return(list(den = out, alpha = alpha, ts = ts))
+  return(list(den = out, alpha = alpha, ts = ts, Re = Re))
 }
