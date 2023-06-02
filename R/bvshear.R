@@ -51,90 +51,90 @@
 #' @aliases dBVshear
 dBVshear <- function(x, u, v, beta = NULL, t = NULL, sc = NULL, 
                      method = 1, ...) {
-  u <- 0.0346930*u
-  Re <- 0.452985*u^3
+  u <- u*sqrt(1.2/997)
   z0 <- 0.11*u^2/9.8
+  Re <- u*z0/v
   tk <- (v*z0/u^3)^(1/2)
   D <- v/sc
   if (method == 1) {
-    s <- 32.85*Re^(-1/4)*tk
+    ts <- 32.85*Re^(-1/4)*tk
     alpha <- (3.957382*Re^(-1/12))/(3.957382*Re^(-1/12) - 1)
   }
   if (method == 2) {
     omega <- exp(1/(2*beta*t))*2*pnorm(-sqrt(1/(beta*t)))
     psi <- omega*sqrt(pi*sc)*Re^(1/4)*sqrt(D/(t*u^2))
-    s <- 6.469*psi^(-1)*tk
-    alpha <- (12*psi*Re^(-1/3))/(12*psi*Re^(-1/3) - 1)
+    ts <- 6.469*psi^(-1)*tk
+    alpha <- (12.056*psi*Re^(-1/3))/(12.056*psi*Re^(-1/3) - 1)
   }
-  out <- PearsonDS::dpearsonVI(x, a = alpha, b = alpha, location = 0, scale = s, ...)
-  return(out)
+  out <- PearsonDS::dpearsonVI(x, a = alpha, b = alpha, location = 0, scale = ts, ...)
+  return(list(den = out, alpha = alpha, ts = ts))
 }
 #' @rdname bvshear
 #' @export
 #' @aliases pBVshear
 pBVshear <- function(q, u, v, beta = NULL, t = NULL, sc = NULL, 
                      method = 1, ...) {
-  u <- 0.0346930*u
-  Re <- 0.452985*u^3
+  u <- u*sqrt(1.2/997)
   z0 <- 0.11*u^2/9.8
+  Re <- u*z0/v
   tk <- (v*z0/u^3)^(1/2)
   D <- v/sc
   if (method == 1) {
-    s <- 32.85*Re^(-1/4)*tk
+    ts <- 32.85*Re^(-1/4)*tk
     alpha <- (3.957382*Re^(-1/12))/(3.957382*Re^(-1/12) - 1)
   }
   if (method == 2) {
     omega <- exp(1/(2*beta*t))*2*pnorm(-sqrt(1/(beta*t)))
     psi <- omega*sqrt(pi*sc)*Re^(1/4)*sqrt(D/(t*u^2))
-    s <- 6.469*psi^(-1)*tk
-    alpha <- (12*psi*Re^(-1/3))/(12*psi*Re^(-1/3) - 1)
+    ts <- 6.469*psi^(-1)*tk
+    alpha <- (12.056*psi*Re^(-1/3))/(12.056*psi*Re^(-1/3) - 1)
   }
-  out <- PearsonDS::ppearsonVI(q, a = alpha, b = alpha, location = 0, scale = s, ...)
-  return(out)
+  out <- PearsonDS::ppearsonVI(q, a = alpha, b = alpha, location = 0, scale = ts, ...)
+  return(list(den = out, alpha = alpha, ts = ts))
 }
 #' @rdname bvshear
 #' @export
 #' @aliases qBVshear
 qBVshear <- function(p, u, v, beta = NULL, t = NULL, sc = NULL, 
                      method = 1, ...) {
-  u <- 0.0346930*u
-  Re <- 0.452985*u^3
+  u <- u*sqrt(1.2/997)
   z0 <- 0.11*u^2/9.8
+  Re <- u*z0/v
   tk <- (v*z0/u^3)^(1/2)
   D <- v/sc
   if (method == 1) {
-    s <- 32.85*Re^(-1/4)*tk
+    ts <- 32.85*Re^(-1/4)*tk
     alpha <- (3.957382*Re^(-1/12))/(3.957382*Re^(-1/12) - 1)
   }
   if (method == 2) {
     omega <- exp(1/(2*beta*t))*2*pnorm(-sqrt(1/(beta*t)))
     psi <- omega*sqrt(pi*sc)*Re^(1/4)*sqrt(D/(t*u^2))
-    s <- 6.469*psi^(-1)*tk
-    alpha <- (12*psi*Re^(-1/3))/(12*psi*Re^(-1/3) - 1)
+    ts <- 6.469*psi^(-1)*tk
+    alpha <- (12.056*psi*Re^(-1/3))/(12.056*psi*Re^(-1/3) - 1)
   }
-  out <- PearsonDS::qpearsonVI(p, a = alpha, b = alpha, location = 0, scale = s, ...)
-  return(out)
+  out <- PearsonDS::qpearsonVI(p, a = alpha, b = alpha, location = 0, scale = ts, ...)
+  return(list(den = out, alpha = alpha, ts = ts))
 }
 #' @rdname bvshear
 #' @export
 #' @aliases rBVshear
 rBVshear <- function(n, u, v, beta = NULL, t = NULL, sc = NULL, 
                      method = 1, ...) {
-  u <- 0.0346930*u
-  Re <- 0.452985*u^3
+  u <- u*sqrt(1.2/997)
   z0 <- 0.11*u^2/9.8
+  Re <- u*z0/v
   tk <- (v*z0/u^3)^(1/2)
   D <- v/sc
   if (method == 1) {
-    s <- 32.85*Re^(-1/4)*tk
+    ts <- 32.85*Re^(-1/4)*tk
     alpha <- (3.957382*Re^(-1/12))/(3.957382*Re^(-1/12) - 1)
   }
   if (method == 2) {
     omega <- exp(1/(2*beta*t))*2*pnorm(-sqrt(1/(beta*t)))
     psi <- omega*sqrt(pi*sc)*Re^(1/4)*sqrt(D/(t*u^2))
-    s <- 6.469*psi^(-1)*tk
-    alpha <- (12*psi*Re^(-1/3))/(12*psi*Re^(-1/3) - 1)
+    ts <- 6.469*psi^(-1)*tk
+    alpha <- (12.056*psi*Re^(-1/3))/(12.056*psi*Re^(-1/3) - 1)
   }
-  out <- PearsonDS::rpearsonVI(n, a = alpha, b = alpha, location = 0, scale = s, ...)
-  return(out)
+  out <- PearsonDS::rpearsonVI(n, a = alpha, b = alpha, location = 0, scale = ts, ...)
+  return(list(den = out, alpha = alpha, ts = ts))
 }
